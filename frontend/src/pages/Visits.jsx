@@ -10,7 +10,7 @@ const emptyForm = { shipId: '', portId: '', arrivalDate: '', departureDate: '', 
 const toInputValue = (isoDate) => (isoDate ? isoDate.slice(0, 16) : '')
 
 const formatDate = (isoDate) =>
-  isoDate ? new Date(isoDate).toLocaleString('tr-TR', { dateStyle: 'short', timeStyle: 'short' }) : '-'
+  isoDate ? new Date(isoDate).toLocaleString('tr-TR', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false }) : '-'
 
 export default function Visits() {
   const [visits, setVisits] = useState([])
@@ -112,7 +112,7 @@ export default function Visits() {
   return (
     <Page icon="📅" title="Ziyaret Kayıtları" description="Gemilerin limanlara geliş ve ayrılış kayıtlarını yönetin.">
 
-      <FormCard editing={editingId} title={editingId ? '✏️ Ziyareti Güncelle' : '➕ Yeni Ziyaret Kaydı'}>
+      <FormCard editing={editingId} title={editingId ? 'Ziyareti Güncelle' : 'Yeni Ziyaret Ekle'}>
         <Alerts error={errorMsg} success={successMsg} />
 
         {eksikVeri ? (
@@ -137,14 +137,14 @@ export default function Visits() {
               ))}
             </select>
 
-            <label style={{ display: 'flex', flexDirection: 'column', fontSize: '12px', color: '#495057', flex: '1', minWidth: '190px' }}>
+            <label style={{ display: 'flex', flexDirection: 'column', fontSize: '13px', color: '#495057', flex: '1', minWidth: '190px' }}>
               Geliş Tarihi
-              <input type="datetime-local" name="arrivalDate" value={formData.arrivalDate} onChange={handleInputChange} style={{ padding: '8px' }} />
+              <input type="datetime-local" name="arrivalDate" value={formData.arrivalDate} onChange={handleInputChange} style={{ ...inputStyle, marginTop: '5px' }} />
             </label>
 
-            <label style={{ display: 'flex', flexDirection: 'column', fontSize: '12px', color: '#495057', flex: '1', minWidth: '190px' }}>
+            <label style={{ display: 'flex', flexDirection: 'column', fontSize: '13px', color: '#495057', flex: '1', minWidth: '190px' }}>
               Ayrılış Tarihi
-              <input type="datetime-local" name="departureDate" value={formData.departureDate} onChange={handleInputChange} style={{ padding: '8px' }} />
+              <input type="datetime-local" name="departureDate" value={formData.departureDate} onChange={handleInputChange} style={{ ...inputStyle, marginTop: '5px' }} />
             </label>
 
             <input type="text" name="purpose" placeholder="Ziyaret Amacı (Örn: Yükleme, Bakım)" value={formData.purpose} onChange={handleInputChange} style={{ ...inputStyle, minWidth: '220px' }} />

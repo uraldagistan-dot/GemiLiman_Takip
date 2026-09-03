@@ -176,7 +176,7 @@ export default function Ships() {
     <Page icon="🚢" title="Gemi Yönetimi" description="Gemi ekleyebilir, düzenleyebilir, silebilir ve detaylarını görmek için üzerlerine tıklayabilirsiniz.">
 
       {/* GEMİ EKLEME / GÜNCELLEME FORMU */}
-      <FormCard editing={editingId} title={editingId ? '✏️ Gemiyi Güncelle' : '➕ Yeni Gemi Ekle'}>
+      <FormCard editing={editingId} title={editingId ? 'Gemiyi Güncelle' : 'Yeni Gemi Ekle'}>
         <Alerts error={errorMsg} success={successMsg} />
 
         <form onSubmit={handleSubmit} style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
@@ -219,8 +219,8 @@ export default function Ships() {
                 {/* Butonlar akordeonu açıp kapatmasın diye tıklama yayılımını durduruyoruz */}
                 <Button variant="update" onClick={(e) => { e.stopPropagation(); handleEditClick(ship) }} style={{ padding: '5px 10px', fontWeight: 'bold' }}>Düzenle</Button>
                 <Button variant="danger" onClick={(e) => { e.stopPropagation(); handleDelete(ship) }} style={{ padding: '5px 10px' }}>Sil</Button>
-                <span style={{ fontSize: '20px', color: '#007bff' }}>
-                  {expandedShipId === ship.shipId ? '🔼' : '🔽'}
+                <span style={{ fontSize: '18px', color: '#007bff', fontWeight: 'bold' }}>
+                  {expandedShipId === ship.shipId ? '▲' : '▼'}
                 </span>
               </div>
             </div>
@@ -230,7 +230,7 @@ export default function Ships() {
               <div style={{ padding: '15px', borderTop: '2px solid #e9ecef', backgroundColor: '#f8f9fa' }}>
 
                 {/* YÜKLER BÖLÜMÜ */}
-                <h4 style={{ color: '#007bff', marginTop: 0 }}>📦 Gemideki Yükler</h4>
+                <h4 style={{ color: '#007bff', marginTop: 0 }}>Gemideki Yükler</h4>
                 {ship.cargoes && ship.cargoes.length > 0 ? (
                   <ul style={{ lineHeight: '1.6', marginBottom: '20px' }}>
                     {ship.cargoes.map(cargo => (
@@ -244,7 +244,7 @@ export default function Ships() {
                 )}
 
                 {/* MÜRETTEBAT BÖLÜMÜ */}
-                <h4 style={{ color: '#17a2b8', marginTop: 0 }}>👨‍✈️ Mürettebat Bilgisi</h4>
+                <h4 style={{ color: '#17a2b8', marginTop: 0 }}>Mürettebat Bilgisi</h4>
 
                 {ship.crewAssignments && ship.crewAssignments.length > 0 ? (
                   <ul style={{ lineHeight: '1.8', marginBottom: '20px' }}>

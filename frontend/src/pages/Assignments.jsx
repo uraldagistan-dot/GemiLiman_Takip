@@ -81,7 +81,7 @@ export default function Assignments() {
   return (
     <Page icon="🔗" title="Gemi-Mürettebat Atamaları" description="Personeli gemilere atayın. Aynı personel aynı gemiye aynı tarihte iki kez atanamaz.">
 
-      <FormCard editing={false} title="➕ Yeni Atama">
+      <FormCard editing={false} title="Yeni Atama Ekle">
         <Alerts error={errorMsg} success={successMsg} />
 
         {eksikVeri ? (

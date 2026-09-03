@@ -1,13 +1,11 @@
 // Altı ekranın ortak kullandığı küçük sunum bileşenleri.
 // Her sayfada aynı inline style'ları tekrar yazmamak için ayrıldı.
 
-export function Page({ icon, title, description, children }) {
+export function Page({ title, description, children }) {
   return (
-    <div style={{ backgroundColor: '#fff', padding: '20px', borderRadius: '8px' }}>
-      {/* Renkler açıkça veriliyor: beyaz kartın üzerindeki okunabilirlik
-          global stylesheet'e bağlı kalmasın. */}
-      <h2 style={{ color: '#2c3e50', marginTop: 0 }}>{icon} {title}</h2>
-      {description && <p style={{ color: '#5a6570', marginBottom: '20px' }}>{description}</p>}
+    <div style={{ backgroundColor: '#fff', padding: '30px', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.05)' }}>
+      <h2 style={{ color: '#0a1c3e', marginTop: 0, fontSize: '24px', borderBottom: '2px solid #f0f4f8', paddingBottom: '15px' }}>{title}</h2>
+      {description && <p style={{ color: '#5a6570', marginBottom: '25px', fontSize: '15px' }}>{description}</p>}
       {children}
     </div>
   )
@@ -26,13 +24,15 @@ export function Alerts({ error, success }) {
 export function FormCard({ editing, title, children }) {
   return (
     <div style={{
-      backgroundColor: editing ? '#fff3cd' : '#f0f4f8',
-      padding: '20px',
+      backgroundColor: editing ? '#fffdf5' : '#e4ebf3',
+      padding: '25px',
       borderRadius: '8px',
       marginBottom: '30px',
-      border: editing ? '2px solid #ffeeba' : 'none'
+      border: '1px solid',
+      borderColor: editing ? '#ffeeba' : '#d5dfe8',
+      boxShadow: '0 2px 8px rgba(0,0,0,0.02)'
     }}>
-      <h3 style={{ marginTop: 0, color: '#2c3e50' }}>{title}</h3>
+      <h3 style={{ marginTop: 0, color: '#0a1c3e' }}>{title}</h3>
       {children}
     </div>
   )
@@ -40,7 +40,7 @@ export function FormCard({ editing, title, children }) {
 
 export function Button({ variant = 'primary', children, ...rest }) {
   const colors = {
-    primary: { backgroundColor: '#28a745', color: 'white' },
+    primary: { backgroundColor: '#0a1c3e', color: 'white' }, // Arkas Blue
     update: { backgroundColor: '#ffc107', color: 'black' },
     danger: { backgroundColor: '#dc3545', color: 'white' },
     neutral: { backgroundColor: '#6c757d', color: 'white' },
@@ -49,7 +49,16 @@ export function Button({ variant = 'primary', children, ...rest }) {
   return (
     <button
       {...rest}
-      style={{ ...colors[variant], border: 'none', padding: '8px 20px', cursor: 'pointer', borderRadius: '4px', ...rest.style }}
+      style={{ 
+        ...colors[variant], 
+        border: 'none', 
+        padding: '10px 22px', 
+        cursor: 'pointer', 
+        borderRadius: '6px', 
+        fontWeight: '500',
+        boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+        ...rest.style 
+      }}
     >
       {children}
     </button>
@@ -59,8 +68,8 @@ export function Button({ variant = 'primary', children, ...rest }) {
 export function Table({ headers, children }) {
   return (
     <table border="1" cellPadding="10" style={{ borderCollapse: 'collapse', width: '100%', textAlign: 'left' }}>
-      <thead style={{ backgroundColor: '#2c3e50', color: 'white' }}>
-        <tr>{headers.map(h => <th key={h}>{h}</th>)}</tr>
+      <thead style={{ backgroundColor: '#0a1c3e', color: 'white' }}>
+        <tr>{headers.map(h => <th key={h} style={{ padding: '12px' }}>{h}</th>)}</tr>
       </thead>
       <tbody>{children}</tbody>
     </table>

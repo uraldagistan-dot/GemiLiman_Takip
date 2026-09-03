@@ -84,7 +84,7 @@ export default function Ports() {
   return (
     <Page icon="⚓" title="Liman Yönetimi" description="Sistemdeki limanları ekleyebilir, güncelleyebilir veya silebilirsiniz.">
 
-      <FormCard editing={editingId} title={editingId ? '✏️ Limanı Güncelle' : '➕ Yeni Liman Ekle'}>
+      <FormCard editing={editingId} title={editingId ? 'Limanı Güncelle' : 'Yeni Liman Ekle'}>
         <Alerts error={errorMsg} success={successMsg} />
 
         <form onSubmit={handleSubmit} style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>

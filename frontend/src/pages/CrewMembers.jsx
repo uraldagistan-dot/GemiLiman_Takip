@@ -114,7 +114,7 @@ export default function CrewMembers() {
   return (
     <Page icon="👨‍✈️" title="Mürettebat Yönetimi" description="Sisteme personel ekleyebilir, bilgilerini güncelleyebilir veya silebilirsiniz.">
 
-      <FormCard editing={editingId} title={editingId ? '✏️ Personeli Güncelle' : '➕ Yeni Mürettebat Ekle'}>
+      <FormCard editing={editingId} title={editingId ? 'Personeli Güncelle' : 'Yeni Mürettebat Ekle'}>
         <Alerts error={errorMsg} success={successMsg} />
 
         {/* noValidate: tarayıcının kendi (İngilizce) uyarısı devreye girip formu kesmesin;

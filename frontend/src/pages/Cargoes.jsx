@@ -113,7 +113,7 @@ export default function Cargoes() {
   return (
     <Page icon="📦" title="Yük Yönetimi" description="Sistemdeki yükleri ekleyebilir, güncelleyebilir veya silebilirsiniz.">
 
-      <FormCard editing={editingId} title={editingId ? '✏️ Yükü Güncelle' : '➕ Yeni Yük Ekle'}>
+      <FormCard editing={editingId} title={editingId ? 'Yükü Güncelle' : 'Yeni Yük Ekle'}>
         <Alerts error={errorMsg} success={successMsg} />
 
         {ships.length === 0 ? (

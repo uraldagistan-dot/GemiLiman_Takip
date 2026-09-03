@@ -97,3 +97,17 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+button:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+input:focus, select:focus {
+  border-color: #0a1c3e !important;
+  box-shadow: 0 0 0 3px rgba(10, 28, 62, 0.1) !important;
+}

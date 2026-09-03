@@ -21,24 +21,39 @@ const linkStyle = ({ isActive }) => ({
   color: 'white',
   textDecoration: 'none',
   fontWeight: 'bold',
-  padding: '6px 10px',
+  padding: '6px 12px',
   borderRadius: '4px',
-  backgroundColor: isActive ? '#1a252f' : 'transparent'
+  transition: 'background-color 0.2s',
+  backgroundColor: isActive ? 'rgba(255, 255, 255, 0.2)' : 'transparent'
 })
 
 function Home() {
   return (
-    <div style={{ backgroundColor: '#fff', padding: '20px', borderRadius: '8px' }}>
-      <h2 style={{ color: '#2c3e50', marginTop: 0 }}>⚓ Liman Gemi Takip Sistemine Hoş Geldiniz</h2>
-      <p>Yukarıdaki menüden ilgili ekrana geçebilirsiniz.</p>
-      <ul style={{ lineHeight: '1.8' }}>
-        <li><strong>Gemiler</strong> — Gemi listeleme, ekleme, düzenleme, silme (IMO benzersiz)</li>
-        <li><strong>Limanlar</strong> — Liman CRUD işlemleri</li>
-        <li><strong>Ziyaretler</strong> — Gemi ve liman seçimiyle ziyaret kaydı (geliş &lt; ayrılış)</li>
-        <li><strong>Yükler</strong> — Gemiye ait yük listesi (ağırlık &gt; 0)</li>
-        <li><strong>Mürettebat</strong> — Personel yönetimi (e-posta ve telefon validasyonu)</li>
-        <li><strong>Atamalar</strong> — Gemi-mürettebat atamaları (aynı gemi/personel/tarih tekrar edemez)</li>
-      </ul>
+    <div style={{ backgroundColor: '#fff', padding: '40px 20px', borderRadius: '8px', textAlign: 'center', boxShadow: '0 4px 12px rgba(0,0,0,0.05)' }}>
+      <img src="/arkas-logo.png" alt="Arkas Logo" style={{ height: '80px', marginBottom: '20px' }} />
+      <h2 style={{ color: '#0a1c3e', marginTop: 0, fontSize: '28px' }}>Liman Gemi Takip Sistemine Hoş Geldiniz</h2>
+      <p style={{ color: '#5a6570', fontSize: '18px', maxWidth: '600px', margin: '0 auto 30px' }}>
+        Arkas Holding bünyesindeki gemi, liman, yük ve mürettebat operasyonlarını kolayca yönetebilirsiniz.
+      </p>
+      
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px', textAlign: 'left', marginTop: '30px' }}>
+        <div style={{ padding: '20px', backgroundColor: '#f8f9fa', borderRadius: '8px', boxShadow: '0 2px 5px rgba(0,0,0,0.04)' }}>
+          <h3 style={{ margin: '0 0 10px 0', color: '#0a1c3e' }}>Gemiler & Limanlar</h3>
+          <p style={{ margin: 0, fontSize: '14px', color: '#6c757d' }}>Filo kayıtlarını ve liman bilgilerini sistemde yönetin.</p>
+        </div>
+        <div style={{ padding: '20px', backgroundColor: '#f8f9fa', borderRadius: '8px', boxShadow: '0 2px 5px rgba(0,0,0,0.04)' }}>
+          <h3 style={{ margin: '0 0 10px 0', color: '#0a1c3e' }}>Ziyaret Kayıtları</h3>
+          <p style={{ margin: 0, fontSize: '14px', color: '#6c757d' }}>Gemilerin limanlara varış ve ayrılış takvimlerini takip edin.</p>
+        </div>
+        <div style={{ padding: '20px', backgroundColor: '#f8f9fa', borderRadius: '8px', boxShadow: '0 2px 5px rgba(0,0,0,0.04)' }}>
+          <h3 style={{ margin: '0 0 10px 0', color: '#0a1c3e' }}>Yük & Operasyon</h3>
+          <p style={{ margin: 0, fontSize: '14px', color: '#6c757d' }}>Taşınan kargoları ve ağırlık detaylarını güncelleyin.</p>
+        </div>
+        <div style={{ padding: '20px', backgroundColor: '#f8f9fa', borderRadius: '8px', boxShadow: '0 2px 5px rgba(0,0,0,0.04)' }}>
+          <h3 style={{ margin: '0 0 10px 0', color: '#0a1c3e' }}>Mürettebat</h3>
+          <p style={{ margin: 0, fontSize: '14px', color: '#6c757d' }}>Personel listesini ve gemilere atanma durumlarını izleyin.</p>
+        </div>
+      </div>
     </div>
   )
 }
@@ -49,7 +64,8 @@ function App() {
       <div style={{ fontFamily: 'sans-serif', maxWidth: '1100px', margin: '0 auto', padding: '10px' }}>
 
         {/* ÜST MENÜ (NAVBAR) */}
-        <nav style={{ backgroundColor: '#2c3e50', padding: '12px 15px', borderRadius: '8px', marginBottom: '20px', display: 'flex', gap: '8px', flexWrap: 'wrap', alignItems: 'center' }}>
+        <nav style={{ backgroundColor: '#0a1c3e', padding: '12px 20px', borderRadius: '8px', marginBottom: '25px', display: 'flex', gap: '15px', flexWrap: 'wrap', alignItems: 'center', boxShadow: '0 4px 10px rgba(10, 28, 62, 0.2)' }}>
+          <img src="/arkas-logo.png" alt="Arkas Logo" style={{ height: '30px', marginRight: '10px', filter: 'brightness(0) invert(1)' }} />
           <NavLink to="/" style={linkStyle} end>Ana Sayfa</NavLink>
           {screens.map(s => (
             <NavLink key={s.path} to={s.path} style={linkStyle}>{s.label}</NavLink>

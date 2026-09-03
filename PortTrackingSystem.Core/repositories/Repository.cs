@@ -21,7 +21,7 @@ namespace PortTrackingSystem.Core.Repositories
 
         public async Task<IEnumerable<T>> GetAllAsync()
         {
-            return await _dbSet.ToListAsync();
+            return await _dbSet.AsNoTracking().ToListAsync();
         }
 
         public async Task<T> GetByIdAsync(int id)
@@ -46,9 +46,9 @@ namespace PortTrackingSystem.Core.Repositories
             _dbSet.Remove(entity);
             _context.SaveChanges(); // Kaydetmeyi buraya da ekliyoruz
         }
-         public async Task<IEnumerable<T>> GetAllWithIncludeAsync(params Expression<Func<T, object>>[] includes)
+        public async Task<IEnumerable<T>> GetAllWithIncludeAsync(params Expression<Func<T, object>>[] includes)
         {
-            IQueryable<T> query = _dbSet;
+            IQueryable<T> query = _dbSet.AsNoTracking().AsSplitQuery();
 
             // Dışarıdan istenen her bir ilişkili tabloyu (Yük, Ziyaret vs.) sorguya dahil ediyoruz (Include)
             foreach (var include in includes)
@@ -61,7 +61,7 @@ namespace PortTrackingSystem.Core.Repositories
 
         public async Task<IEnumerable<T>> GetAllWithNestedIncludeAsync(params string[] includes)
         {
-            IQueryable<T> query = _dbSet;
+            IQueryable<T> query = _dbSet.AsNoTracking().AsSplitQuery();
 
             foreach (var include in includes)
             {
