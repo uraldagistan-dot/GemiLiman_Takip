@@ -1,0 +1,33 @@
+# ---- .NET ----
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+TestResults/
+*.trx
+
+# ---- Node / React (Vite) ----
+node_modules/
+dist/
+dist-ssr/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ---- Ortam / gizli bilgi ----
+# Bağlantı dizesi gibi yerel ayarlar depoya girmesin
+.env
+.env.local
+appsettings.*.local.json
+
+# ---- Editör / işletim sistemi ----
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
