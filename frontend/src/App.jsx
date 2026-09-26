@@ -30,10 +30,10 @@ const linkStyle = ({ isActive }) => ({
 function Home() {
   return (
     <div style={{ backgroundColor: '#fff', padding: '40px 20px', borderRadius: '8px', textAlign: 'center', boxShadow: '0 4px 12px rgba(0,0,0,0.05)' }}>
-      <img src="/arkas-logo.png" alt="Arkas Logo" style={{ height: '80px', marginBottom: '20px' }} />
+      <img src="/logo.svg" alt="Liman Gemi Takip Sistemi" style={{ height: '80px', marginBottom: '20px' }} />
       <h2 style={{ color: '#0a1c3e', marginTop: 0, fontSize: '28px' }}>Liman Gemi Takip Sistemine Hoş Geldiniz</h2>
       <p style={{ color: '#5a6570', fontSize: '18px', maxWidth: '600px', margin: '0 auto 30px' }}>
-        Arkas Holding bünyesindeki gemi, liman, yük ve mürettebat operasyonlarını kolayca yönetebilirsiniz.
+        Gemi, liman, yük ve mürettebat operasyonlarını tek bir yerden kolayca yönetebilirsiniz.
       </p>
       
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px', textAlign: 'left', marginTop: '30px' }}>
@@ -64,8 +64,9 @@ function App() {
       <div style={{ fontFamily: 'sans-serif', maxWidth: '1100px', margin: '0 auto', padding: '10px' }}>
 
         {/* ÜST MENÜ (NAVBAR) */}
-        <nav style={{ backgroundColor: '#0a1c3e', padding: '12px 20px', borderRadius: '8px', marginBottom: '25px', display: 'flex', gap: '15px', flexWrap: 'wrap', alignItems: 'center', boxShadow: '0 4px 10px rgba(10, 28, 62, 0.2)' }}>
-          <img src="/arkas-logo.png" alt="Arkas Logo" style={{ height: '30px', marginRight: '10px', filter: 'brightness(0) invert(1)' }} />
+        <nav style={{ backgroundColor: '#0a1c3e', padding: '12px 20px', borderRadius: '8px', marginBottom: '25px', display: 'flex', gap: '10px', flexWrap: 'wrap', alignItems: 'center', boxShadow: '0 4px 10px rgba(10, 28, 62, 0.2)' }}>
+          <img src="/logo.svg" alt="" style={{ height: '28px', filter: 'brightness(0) invert(1)' }} />
+          <span style={{ color: 'white', fontWeight: 'bold', fontSize: '16px', marginRight: '10px' }}>Liman Gemi Takip Sistemi</span>
           <NavLink to="/" style={linkStyle} end>Ana Sayfa</NavLink>
           {screens.map(s => (
             <NavLink key={s.path} to={s.path} style={linkStyle}>{s.label}</NavLink>

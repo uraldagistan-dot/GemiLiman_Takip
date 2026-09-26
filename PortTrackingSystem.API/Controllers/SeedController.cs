@@ -42,7 +42,7 @@ namespace PortTrackingSystem.API.Controllers
             await _context.SaveChangesAsync();
 
             // 3. Gemileri Oluştur
-            var shipNames = new[] { "MSC Gülsün", "CMA CGM Jacques Saadé", "Ever Alot", "HMM Algeciras", "Cosco Universe", "OOCL Hong Kong", "Madrid Maersk", "Emma Maersk", "Arkas Bosphorus", "Arkas Anatolia", "Gülcemal", "Piri Reis", "Barbaros", "Turgut Reis", "Oruç Reis" };
+            var shipNames = new[] { "MSC Gülsün", "CMA CGM Jacques Saadé", "Ever Alot", "HMM Algeciras", "Cosco Universe", "OOCL Hong Kong", "Madrid Maersk", "Emma Maersk", "Boğaziçi Yıldızı", "Anadolu Yıldızı", "Gülcemal", "Piri Reis", "Barbaros", "Turgut Reis", "Oruç Reis" };
             var ships = new List<Ship>();
             for (int i = 0; i < shipNames.Length; i++)
             {
@@ -69,7 +69,7 @@ namespace PortTrackingSystem.API.Controllers
                 {
                     FirstName = firstNames[random.Next(firstNames.Length)],
                     LastName = lastNames[random.Next(lastNames.Length)],
-                    Email = $"personel{i}@arkas.com",
+                    Email = $"personel{i}@example.com",
                     PhoneNumber = $"+905{random.Next(30,55)}{random.Next(1000000, 9999999)}",
                     Role = roles[random.Next(roles.Length)]
                 });

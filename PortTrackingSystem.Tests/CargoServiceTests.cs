@@ -17,7 +17,7 @@ namespace PortTrackingSystem.Tests
             return mockShipRepo;
         }
 
-        // 1. Senaryo: Ağırlık 0 veya daha küçükse sistem hata fırlatmalı (KÖTÜ SENARYO)
+        // 1. Senaryo: Ağırlık 0 veya daha küçükse sistem hata vermeli 
         [Fact]
         public async Task AddCargoAsync_WeightIsZeroOrLess_ThrowsException()
         {

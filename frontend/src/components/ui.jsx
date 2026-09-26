@@ -40,7 +40,7 @@ export function FormCard({ editing, title, children }) {
 
 export function Button({ variant = 'primary', children, ...rest }) {
   const colors = {
-    primary: { backgroundColor: '#0a1c3e', color: 'white' }, // Arkas Blue
+    primary: { backgroundColor: '#0a1c3e', color: 'white' }, // Lacivert
     update: { backgroundColor: '#ffc107', color: 'black' },
     danger: { backgroundColor: '#dc3545', color: 'white' },
     neutral: { backgroundColor: '#6c757d', color: 'white' },
